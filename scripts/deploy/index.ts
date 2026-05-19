@@ -379,7 +379,7 @@ const deployPages = () => {
 };
 
 /**
- * 部署Email Worker
+ * 部署 Email Worker
  */
 const deployEmailWorker = () => {
   console.log("🚧 Deploying Email Worker...");
@@ -388,12 +388,12 @@ const deployEmailWorker = () => {
     console.log("✅ Email Worker deployed successfully");
   } catch (error) {
     console.error("❌ Email Worker deployment failed:", error);
-    // 继续执行而不中断
+    throw error; // 抛出错误让部署失败
   }
 };
 
 /**
- * 部署Cleanup Worker
+ * 部署 Cleanup Worker
  */
 const deployCleanupWorker = () => {
   console.log("🚧 Deploying Cleanup Worker...");
@@ -402,7 +402,7 @@ const deployCleanupWorker = () => {
     console.log("✅ Cleanup Worker deployed successfully");
   } catch (error) {
     console.error("❌ Cleanup Worker deployment failed:", error);
-    // 继续执行而不中断
+    throw error; // 抛出错误让部署失败
   }
 };
 
